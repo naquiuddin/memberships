@@ -1,4 +1,4 @@
-import GitHubProvider from "next-auth/providers/github";
+import EmailProvider from "next-auth/providers/email";
 
 export const authOptions: NextAuthOptions = {
   // huh any! I know.
@@ -11,11 +11,7 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/login",
   },
-  providers: [
-    GitHubProvider({
-      clientId: env.GITHUB_CLIENT_ID,
-      clientSecret: env.GITHUB_CLIENT_SECRET,
-    }),
+  providers: [    
     // EmailProvider({
     //   from: env.SMTP_FROM,
     //   sendVerificationRequest: async ({ identifier, url, provider }) => {
